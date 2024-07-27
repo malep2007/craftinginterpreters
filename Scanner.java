@@ -167,7 +167,7 @@ public class Scanner {
 
         addToken(
                 TokenType.NUMBER,
-                Double.parseDouble(start, current)
+                Double.parseDouble(source.substring(start, current))
         );
     }
 
