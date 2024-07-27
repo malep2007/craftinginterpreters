@@ -15,10 +15,10 @@ public class GenerateAst {
         String outputDir = args[0];
         // description of each type and its fields
         defineAst(outputDir, "Expr", Arrays.asList(
-                "Binary: Expr left, Token operator, Expr right",
-                "Grouping: Expr expresssion",
-                "Literal: Object value",
-                "Unary: Token operator, Expr right"
+                "Binary : Expr left, Token operator, Expr right",
+                "Grouping : Expr expresssion",
+                "Literal : Object value",
+                "Unary : Token operator, Expr right"
         ));
     }
 
@@ -26,15 +26,15 @@ public class GenerateAst {
         String path = outputDir + "/" + baseName + ".java";
         PrintWriter writer = new PrintWriter(path, "UTF-8");
 
-        writer.println("package lox");
+        writer.println("package lox;");
         writer.println();
-        writer.println("import java.util.List");
+        writer.println("import java.util.List;");
         writer.println();
         writer.println("abstract class " + baseName + " {");
         // The AST classes
         for (String type : types) {
             String className = type.split(":")[0].trim();
-            String fields = type.split(":")[0].trim();
+            String fields = type.split(":")[1].trim();
             defineType(writer, baseName, className, fields);
         }
         writer.println("}");
