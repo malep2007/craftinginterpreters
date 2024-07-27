@@ -1,4 +1,4 @@
-package lox;
+
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -6,9 +6,12 @@ import java.io.InputStreamReader;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.List;
 
 public class Lox {
-
+    public Lox() {
+        super();
+    }
     static boolean hadError = false;
 
     public static void main(String[] args) throws IOException {
@@ -56,7 +59,7 @@ public class Lox {
         }
     }
 
-    static void error(int line, String message) {
+    public static void error(int line, String message) {
         report(line, "", message);
     }
 
