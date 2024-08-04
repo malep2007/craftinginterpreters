@@ -25,7 +25,7 @@ abstract class Expr {
             return visitor.visitBinaryExpr(this);
         }
 
-        final Expr left;
+        final Expr left;    
         final Token operator;
         final Expr right;
     }
